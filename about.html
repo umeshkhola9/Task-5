@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Primary SEO -->
+        <title>About Us</title>
+        <meta name="description" content="Learn about Sochit Web Studio — a small, dedicated team building simple, fast, and reliable websites for businesses since 2019." />
+        <meta name="keywords" content="about Sochit Web Studio, web design company, web development team, website studio Austin Texas" />
+        <meta name="author" content="Sochit Web Studio" />
+        <link rel="canonical" href="./about.html" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Us | Sochit Web Studio" />
+        <meta property="og:description" content="Learn about Sochit Web Studio — a small, dedicated team building simple, fast, and reliable websites for businesses since 2019." />
+        <meta property="og:image" content="images/og-image.jpg" />
+        <meta property="og:url" content="./about.html" />
+        <meta property="og:site_name" content="Sochit Web Studio" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Sochit Web Studio" />
+        <meta name="twitter:description" content="Learn about Sochit Web Studio — a small, dedicated team building simple, fast, and reliable websites for businesses since 2019." />
+        <meta name="twitter:image" content="images/og-image.jpg" />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/about.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <script>
+            document.documentElement.setAttribute(
+                "data-theme",
+                localStorage.getItem("theme") || "light"
+            );
+        </script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header role="banner">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="logo-title">
+                    <a href="index.html" aria-label="Sochit Web Studio - Go to homepage">
+                        <picture>
+                            <source srcset="images/logo.webp" type="image/webp" />
+                            <img
+                                src="images/logo.png"
+                                alt="Sochit Web Studio logo"
+                                class="logo"
+                                width="45"
+                                height="45"
+                                fetchpriority="high"
+                            />
+                        </picture>
+                    </a>
+                    <h2 class="title">Sochit Web Studio</h2>
+                </div>
+                <div class="navbar-controls">
+                    <button
+                        id="theme-toggle"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        🌙 Dark Mode
+                    </button>
+                    <button
+                        id="hamburger"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-links"
+                    >
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <ul class="nav-links" id="nav-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active" aria-current="page">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="hero" aria-labelledby="about-hero-heading">
+                <h1 id="about-hero-heading">About Us</h1>
+                <p>A small studio that builds simple, fast websites.</p>
+            </section>
+
+            <section class="cards" aria-labelledby="our-story-heading">
+                <h2 id="our-story-heading" class="sr-only">Our Story and Mission</h2>
+                <article class="card" aria-labelledby="story-card-heading">
+                    <h2 id="story-card-heading">Our Story</h2>
+                    <p>
+                        Sochit Web Studio started in 2019 when a small group of
+                        developers wanted to build websites that were simple,
+                        fast, and easy to update.
+                    </p>
+                </article>
+                <article class="card" aria-labelledby="mission-card-heading">
+                    <h2 id="mission-card-heading">Our Mission</h2>
+                    <p>
+                        To give every client a website that looks good, loads
+                        quickly, and is genuinely easy to maintain after launch.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Animated Counters -->
+            <section class="counters-section" id="counters" aria-labelledby="stats-heading">
+                <h2 id="stats-heading" class="sr-only">Our Statistics</h2>
+                <div class="counters-grid">
+                    <div class="counter-card">
+                        <div class="counter-icon" aria-hidden="true">🚀</div>
+                        <span
+                            class="counter-number"
+                            data-target="120"
+                            data-suffix="+"
+                            aria-label="120 plus projects completed"
+                            >0+</span
+                        >
+                        <p class="counter-label">Projects Completed</p>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-icon" aria-hidden="true">😊</div>
+                        <span
+                            class="counter-number"
+                            data-target="114"
+                            data-suffix="+"
+                            aria-label="114 plus happy clients"
+                            >0+</span
+                        >
+                        <p class="counter-label">Happy Clients</p>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-icon" aria-hidden="true">📅</div>
+                        <span
+                            class="counter-number"
+                            data-target="6"
+                            data-suffix=""
+                            aria-label="6 years of experience"
+                            >0</span
+                        >
+                        <p class="counter-label">Years of Experience</p>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-icon" aria-hidden="true">👨‍💻</div>
+                        <span
+                            class="counter-number"
+                            data-target="15"
+                            data-suffix=""
+                            aria-label="15 team members"
+                            >0</span
+                        >
+                        <p class="counter-label">Team Members</p>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="info-box" aria-label="Did you know facts about Sochit Web Studio">
+                <h2>Did You Know?</h2>
+                <ul>
+                    <li>We have completed over 120 projects.</li>
+                    <li>Our team has 12 designers and 3 developers.</li>
+                    <li>We have been building websites since 2019.</li>
+                </ul>
+            </aside>
+
+            <section class="skills" aria-labelledby="tech-heading">
+                <h2 id="tech-heading"><u>Technologies We Use</u></h2>
+                <ul class="skills-grid" aria-label="List of technologies we use">
+                    <li class="skill">HTML5</li>
+                    <li class="skill">CSS3</li>
+                    <li class="skill">JavaScript</li>
+                    <li class="skill">Responsive Design</li>
+                    <li class="skill">Git &amp; GitHub</li>
+                    <li class="skill">SEO Basics</li>
+                </ul>
+            </section>
+
+            <section class="strengths" aria-labelledby="values-heading">
+                <h2 id="values-heading">Our Values :</h2>
+                <div class="strength-grid">
+                    <article class="strength-card" aria-labelledby="val-quality">
+                        <h3 id="val-quality">Quality</h3>
+                        <p>We take care over every page we build.</p>
+                    </article>
+                    <article class="strength-card" aria-labelledby="val-comms">
+                        <h3 id="val-comms">Communication</h3>
+                        <p>We keep clients updated at every step.</p>
+                    </article>
+                    <article class="strength-card" aria-labelledby="val-rely">
+                        <h3 id="val-rely">Reliability</h3>
+                        <p>We deliver projects on time, every time.</p>
+                    </article>
+                    <article class="strength-card" aria-labelledby="val-simple">
+                        <h3 id="val-simple">Simplicity</h3>
+                        <p>We avoid adding things a website doesn't need.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="page-content" aria-labelledby="goal-heading">
+                <h2 id="goal-heading">Our Goal :-</h2>
+                <p>
+                    To help small and growing businesses get a website that
+                    helps them, instead of one that just sits there looking
+                    nice.
+                </p>
+            </section>
+        </main>
+
+        <!-- Back To Top Button -->
+        <button id="back-to-top" aria-label="Back to top of page"><b aria-hidden="true">↑</b></button>
+
+        <footer class="footer" role="contentinfo">
+            <nav aria-label="Footer navigation">
+                <ul class="footer-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+            <p>
+                Built with ❤️ for
+                <span class="company-name">ApexPlanet Software Pvt. Ltd.</span>
+                Internship – Task 5 Final Submission
+            </p>
+            <p class="tech-stack">HTML · CSS · JavaScript</p>
+        </footer>
+
+        <script src="js/storage.js"></script>
+        <script src="js/darkmode.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

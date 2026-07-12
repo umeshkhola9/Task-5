@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Primary SEO -->
+        <title>Our Services</title>
+        <meta name="description" content="Explore our web design, development, and SEO services. Sochit Web Studio builds modern, responsive websites tailored to your business needs." />
+        <meta name="keywords" content="web design services, web development services, SEO services, responsive website design, custom websites" />
+        <meta name="author" content="Sochit Web Studio" />
+        <link rel="canonical" href="./services.html" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Our Services | Sochit Web Studio" />
+        <meta property="og:description" content="Explore our web design, development, and SEO services. Sochit Web Studio builds modern, responsive websites tailored to your business needs." />
+        <meta property="og:image" content="images/og-image.jpg" />
+        <meta property="og:url" content="./services.html" />
+        <meta property="og:site_name" content="Sochit Web Studio" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Services | Sochit Web Studio" />
+        <meta name="twitter:description" content="Explore our web design, development, and SEO services. Sochit Web Studio builds modern, responsive websites tailored to your business needs." />
+        <meta name="twitter:image" content="images/og-image.jpg" />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/about.css" />
+        <link rel="stylesheet" href="css/services.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <script>
+            document.documentElement.setAttribute(
+                "data-theme",
+                localStorage.getItem("theme") || "light"
+            );
+        </script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header role="banner">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="logo-title">
+                    <a href="index.html" aria-label="Sochit Web Studio - Go to homepage">
+                        <picture>
+                            <source srcset="images/logo.webp" type="image/webp" />
+                            <img
+                                src="images/logo.png"
+                                alt="Sochit Web Studio logo"
+                                class="logo"
+                                width="45"
+                                height="45"
+                                fetchpriority="high"
+                            />
+                        </picture>
+                    </a>
+                    <h2 class="title">Sochit Web Studio</h2>
+                </div>
+                <div class="navbar-controls">
+                    <button
+                        id="theme-toggle"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        🌙 Dark Mode
+                    </button>
+                    <button
+                        id="hamburger"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-links"
+                    >
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <ul class="nav-links" id="nav-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="hero" aria-labelledby="services-hero-heading">
+                <h1 id="services-hero-heading">Our Services</h1>
+                <p>
+                    Simple web design and development services built with HTML,
+                    CSS, and JavaScript.
+                </p>
+            </section>
+
+            <section class="page-content" aria-labelledby="services-list-heading">
+                <h2 id="services-list-heading" class="sr-only">Services We Offer</h2>
+                <div class="cards">
+                    <article class="card" aria-labelledby="svc-design">
+                        <h3 id="svc-design">Website Design</h3>
+                        <p>
+                            Clean, simple layouts that look good on every
+                            device.
+                        </p>
+                    </article>
+                    <article class="card" aria-labelledby="svc-dev">
+                        <h3 id="svc-dev">Web Development</h3>
+                        <p>
+                            Building websites using HTML, CSS, and JavaScript.
+                        </p>
+                    </article>
+                    <article class="card" aria-labelledby="svc-ecom">
+                        <h3 id="svc-ecom">E-Commerce</h3>
+                        <p>Online stores with simple, easy-to-use checkouts.</p>
+                    </article>
+                    <article class="card" aria-labelledby="svc-responsive">
+                        <h3 id="svc-responsive">Responsive Design</h3>
+                        <p>
+                            Websites that work on mobile, tablet, and desktop.
+                        </p>
+                    </article>
+                    <article class="card" aria-labelledby="svc-forms">
+                        <h3 id="svc-forms">Contact Forms</h3>
+                        <p>Simple, working contact forms for any website.</p>
+                    </article>
+                    <article class="card" aria-labelledby="svc-seo">
+                        <h3 id="svc-seo">SEO Setup</h3>
+                        <p>
+                            Basic search engine optimization so people can find
+                            you.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="table-content" aria-labelledby="pricing-heading">
+                <h2 id="pricing-heading">Pricing :</h2>
+                <table aria-label="Service pricing plans">
+                    <caption>Our pricing plans and what's included</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Plan</th>
+                            <th scope="col">Pages</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Support</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Starter</th>
+                            <td>Up to 5</td>
+                            <td>$1,200</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Growth</th>
+                            <td>Up to 12</td>
+                            <td>$3,200</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Enterprise</th>
+                            <td>Unlimited</td>
+                            <td>Custom quote</td>
+                            <td>Ongoing</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+            </section>
+
+            <aside class="info-box" aria-label="Free quote prompt">
+                <h2>Not Sure What You Need?</h2>
+                <p>
+                    Send us a message on our
+                    <a href="contact.html">Contact page</a> and we'll recommend
+                    the right plan for your project. Or click below to get a
+                    free instant quote.
+                </p>
+                <button
+                    class="btn-modal"
+                    data-modal-open
+                    aria-haspopup="dialog"
+                    aria-controls="quote-modal"
+                >
+                    🎯 Get a Free Quote
+                </button>
+            </aside>
+
+            <section class="strengths" aria-labelledby="why-us-heading">
+                <h2 id="why-us-heading">Why Work With Us ?</h2>
+                <div class="strength-grid">
+                    <article class="strength-card" aria-labelledby="str-fast">
+                        <h3 id="str-fast">Fast Turnaround</h3>
+                        <p>Most websites are ready in 3-4 weeks.</p>
+                    </article>
+                    <article class="strength-card" aria-labelledby="str-code">
+                        <h3 id="str-code">Clean Code</h3>
+                        <p>Easy-to-read code that's simple to update later.</p>
+                    </article>
+                    <article class="strength-card" aria-labelledby="str-responsive">
+                        <h3 id="str-responsive">Responsive Layouts</h3>
+                        <p>Your site will work on every screen size.</p>
+                    </article>
+                    <article class="strength-card" aria-labelledby="str-support">
+                        <h3 id="str-support">Friendly Support</h3>
+                        <p>We're easy to reach if something needs fixing.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal Popup -->
+        <div
+            id="quote-modal"
+            class="modal-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-desc"
+            aria-hidden="true"
+        >
+            <div class="modal-box">
+                <button class="modal-close" aria-label="Close Get a Free Quote dialog">
+                    &times;
+                </button>
+                <h2 id="modal-title">🎯 Get a Free Quote</h2>
+                <p id="modal-desc">
+                    Tell us about your project and we'll get back to you within
+                    24 hours with a custom quote.
+                </p>
+                <div class="modal-form" role="form" aria-label="Free quote request form">
+                    <label for="quote-name">Your Name <span aria-label="required">*</span></label>
+                    <input
+                        type="text"
+                        id="quote-name"
+                        name="quote-name"
+                        placeholder="Your Name"
+                        required
+                        aria-required="true"
+                        aria-describedby="quote-name-error"
+                        autocomplete="name"
+                    />
+                    <span id="quote-name-error" class="field-error" role="alert" aria-live="polite"></span>
+
+                    <label for="quote-email">Your Email <span aria-label="required">*</span></label>
+                    <input
+                        type="email"
+                        id="quote-email"
+                        name="quote-email"
+                        placeholder="Your Email"
+                        required
+                        aria-required="true"
+                        aria-describedby="quote-email-error"
+                        autocomplete="email"
+                    />
+                    <span id="quote-email-error" class="field-error" role="alert" aria-live="polite"></span>
+
+                    <label for="quote-service">Service <span aria-label="required">*</span></label>
+                    <select
+                        id="quote-service"
+                        name="quote-service"
+                        required
+                        aria-required="true"
+                        aria-describedby="quote-service-error"
+                    >
+                        <option value="" disabled selected>
+                            Select a Service
+                        </option>
+                        <option value="Website Design">Website Design</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="E-Commerce">E-Commerce</option>
+                        <option value="SEO Setup">SEO Setup</option>
+                    </select>
+                    <span id="quote-service-error" class="field-error" role="alert" aria-live="polite"></span>
+
+                    <p id="quote-status" aria-live="polite" aria-atomic="true"></p>
+
+                    <button type="submit" id="quote-submit">
+                        Submit Request
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back To Top Button -->
+        <button id="back-to-top" aria-label="Back to top of page"><b aria-hidden="true">↑</b></button>
+
+        <footer class="footer" role="contentinfo">
+            <nav aria-label="Footer navigation">
+                <ul class="footer-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" aria-current="page">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+            <p>
+                Built with ❤️ for
+                <span class="company-name">ApexPlanet Software Pvt. Ltd.</span>
+                Internship – Task 5 Final Submission
+            </p>
+            <p class="tech-stack">HTML · CSS · JavaScript</p>
+        </footer>
+
+        <script src="js/storage.js"></script>
+        <script src="js/darkmode.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

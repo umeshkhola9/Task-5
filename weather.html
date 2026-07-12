@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Primary SEO -->
+        <title>Live Weather App</title>
+        <meta name="description" content="Check real-time weather conditions for any city in the world with our free, fast weather lookup tool built by Sochit Web Studio." />
+        <meta name="keywords" content="weather app, live weather, city weather lookup, JavaScript weather app, Sochit Web Studio" />
+        <meta name="author" content="Sochit Web Studio" />
+        <link rel="canonical" href="./weather.html" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Live Weather App | Sochit Web Studio" />
+        <meta property="og:description" content="Check real-time weather conditions for any city in the world with our free, fast weather lookup tool built by Sochit Web Studio." />
+        <meta property="og:image" content="images/og-image.jpg" />
+        <meta property="og:url" content="./weather.html" />
+        <meta property="og:site_name" content="Sochit Web Studio" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Live Weather App | Sochit Web Studio" />
+        <meta name="twitter:description" content="Check real-time weather conditions for any city in the world with our free, fast weather lookup tool built by Sochit Web Studio." />
+        <meta name="twitter:image" content="images/og-image.jpg" />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/weather.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="preconnect" href="https://api.openweathermap.org" />
+        <script>
+            document.documentElement.setAttribute(
+                "data-theme",
+                localStorage.getItem("theme") || "light"
+            );
+        </script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header role="banner">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="logo-title">
+                    <a href="index.html" aria-label="Sochit Web Studio - Go to homepage">
+                        <picture>
+                            <source srcset="images/logo.webp" type="image/webp" />
+                            <img
+                                src="images/logo.png"
+                                alt="Sochit Web Studio logo"
+                                class="logo"
+                                width="45"
+                                height="45"
+                                fetchpriority="high"
+                            />
+                        </picture>
+                    </a>
+                    <h2 class="title">Sochit Web Studio</h2>
+                </div>
+                <div class="navbar-controls">
+                    <button
+                        id="theme-toggle"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        🌙 Dark Mode
+                    </button>
+                    <button
+                        id="hamburger"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-links"
+                    >
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <ul class="nav-links" id="nav-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html" class="active" aria-current="page">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <!-- Weather Hero Banner -->
+            <section class="hero" style="padding: 60px 20px" aria-labelledby="weather-hero-heading">
+                <h1 id="weather-hero-heading">🌤️ Weather App</h1>
+                <p>Search live weather conditions for any city in the world.</p>
+            </section>
+
+            <!-- Weather App Section -->
+            <section class="weather-section" aria-labelledby="weather-search-heading">
+                <h2 id="weather-search-heading" class="sr-only">Weather Search</h2>
+                <div class="weather-container">
+                    <!-- Search Box -->
+                    <div
+                        class="weather-search-box"
+                        role="search"
+                        aria-label="City weather search"
+                    >
+                        <label for="city-input" class="sr-only">Enter city name to get weather</label>
+                        <input
+                            type="search"
+                            id="city-input"
+                            class="weather-input"
+                            placeholder="Enter city name (e.g. London, Tokyo...)"
+                            aria-label="City name"
+                            aria-describedby="weather-error"
+                            autocomplete="off"
+                        />
+                        <button
+                            id="search-btn"
+                            class="btn weather-search-btn"
+                            aria-label="Search weather for entered city"
+                        >
+                            🔍 Search
+                        </button>
+                    </div>
+
+                    <!-- Loading Indicator -->
+                    <div
+                        id="weather-loading"
+                        class="weather-loading hidden"
+                        aria-live="polite"
+                        aria-busy="true"
+                        role="status"
+                    >
+                        <div class="weather-spinner" aria-hidden="true"></div>
+                        <p>Fetching weather data…</p>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div
+                        id="weather-error"
+                        class="weather-error hidden"
+                        aria-live="assertive"
+                        role="alert"
+                    ></div>
+
+                    <!-- Weather Dashboard -->
+                    <div
+                        id="weather-result"
+                        class="weather-dashboard hidden"
+                        aria-live="polite"
+                        aria-label="Weather results"
+                    >
+                        <div class="weather-dashboard-top">
+                            <p id="weather-desc" class="weather-dashboard-condition"></p>
+                            <h2 id="city-name" class="weather-dashboard-city"></h2>
+                            <p id="weather-updated" class="weather-dashboard-updated"></p>
+                        </div>
+
+                        <div class="weather-dashboard-main">
+                            <img
+                                id="weather-icon"
+                                src=""
+                                alt=""
+                                class="weather-dashboard-icon"
+                                width="110"
+                                height="110"
+                                loading="lazy"
+                            />
+                            <span id="weather-temp" class="weather-dashboard-temp" aria-label="Temperature"></span>
+                        </div>
+
+                        <div class="weather-cards-grid" aria-label="Additional weather details">
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">🌡️</span>
+                                <span class="weather-mini-card-label">Feels Like</span>
+                                <span id="weather-feelslike" class="weather-mini-card-value"></span>
+                            </div>
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">💧</span>
+                                <span class="weather-mini-card-label">Humidity</span>
+                                <span id="weather-humidity" class="weather-mini-card-value" aria-label="Humidity level"></span>
+                            </div>
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">💨</span>
+                                <span class="weather-mini-card-label">Wind Speed</span>
+                                <span id="weather-wind" class="weather-mini-card-value" aria-label="Wind speed"></span>
+                            </div>
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">🌬️</span>
+                                <span class="weather-mini-card-label">Pressure</span>
+                                <span id="weather-pressure" class="weather-mini-card-value"></span>
+                            </div>
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">👁️</span>
+                                <span class="weather-mini-card-label">Visibility</span>
+                                <span id="weather-visibility" class="weather-mini-card-value"></span>
+                            </div>
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">🌅</span>
+                                <span class="weather-mini-card-label">Sunrise</span>
+                                <span id="weather-sunrise" class="weather-mini-card-value"></span>
+                            </div>
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">🌇</span>
+                                <span class="weather-mini-card-label">Sunset</span>
+                                <span id="weather-sunset" class="weather-mini-card-value"></span>
+                            </div>
+                            <div class="weather-mini-card">
+                                <span class="weather-mini-card-icon" aria-hidden="true">☁️</span>
+                                <span class="weather-mini-card-label">Condition</span>
+                                <span id="weather-condition" class="weather-mini-card-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Back To Top Button -->
+        <button id="back-to-top" aria-label="Back to top of page"><b aria-hidden="true">↑</b></button>
+
+        <footer class="footer" role="contentinfo">
+            <nav aria-label="Footer navigation">
+                <ul class="footer-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html" aria-current="page">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+            <p>
+                Built with ❤️ for
+                <span class="company-name">ApexPlanet Software Pvt. Ltd.</span>
+                Internship – Task 5 Final Submission
+            </p>
+            <p class="tech-stack">HTML · CSS · JavaScript</p>
+        </footer>
+
+        <script src="js/storage.js"></script>
+        <script src="js/darkmode.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/weather.js"></script>
+    </body>
+</html>

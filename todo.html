@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Primary SEO -->
+        <title>Todo List App</title>
+        <meta name="description" content="Organize your day with our free, simple to-do list app. Add, edit, filter, and track tasks — all saved locally in your browser." />
+        <meta name="keywords" content="todo list app, task manager, to-do app, JavaScript todo app, Sochit Web Studio" />
+        <meta name="author" content="Sochit Web Studio" />
+        <link rel="canonical" href="./todo.html" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Todo List App | Sochit Web Studio" />
+        <meta property="og:description" content="Organize your day with our free, simple to-do list app. Add, edit, filter, and track tasks — all saved locally in your browser." />
+        <meta property="og:image" content="images/og-image.jpg" />
+        <meta property="og:url" content="./todo.html" />
+        <meta property="og:site_name" content="Sochit Web Studio" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Todo List App | Sochit Web Studio" />
+        <meta name="twitter:description" content="Organize your day with our free, simple to-do list app. Add, edit, filter, and track tasks — all saved locally in your browser." />
+        <meta name="twitter:image" content="images/og-image.jpg" />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/todo.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <script>
+            document.documentElement.setAttribute(
+                "data-theme",
+                localStorage.getItem("theme") || "light"
+            );
+        </script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header role="banner">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="logo-title">
+                    <a href="index.html" aria-label="Sochit Web Studio - Go to homepage">
+                        <picture>
+                            <source srcset="images/logo.webp" type="image/webp" />
+                            <img
+                                src="images/logo.png"
+                                alt="Sochit Web Studio logo"
+                                class="logo"
+                                width="45"
+                                height="45"
+                                fetchpriority="high"
+                            />
+                        </picture>
+                    </a>
+                    <h2 class="title">Sochit Web Studio</h2>
+                </div>
+                <div class="navbar-controls">
+                    <button
+                        id="theme-toggle"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        🌙 Dark Mode
+                    </button>
+                    <button
+                        id="hamburger"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-links"
+                    >
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <ul class="nav-links" id="nav-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html" class="active" aria-current="page">Todo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <!-- Todo Hero Banner -->
+            <section class="hero" style="padding: 60px 20px" aria-labelledby="todo-hero-heading">
+                <h1 id="todo-hero-heading">✅ Todo List</h1>
+                <p>
+                    Manage your tasks efficiently. Your tasks are saved
+                    automatically.
+                </p>
+            </section>
+
+            <!-- Todo App Section -->
+            <section class="todo-section" aria-labelledby="todo-app-heading">
+                <h2 id="todo-app-heading" class="sr-only">Task Manager</h2>
+                <div class="todo-container">
+                    <!-- Add Task Input -->
+                    <div class="todo-input-box" role="group" aria-label="Add a new task">
+                        <label for="todo-input" class="sr-only">New task description</label>
+                        <input
+                            type="text"
+                            id="todo-input"
+                            class="todo-input"
+                            placeholder="Add a new task…"
+                            aria-label="New task description"
+                            aria-describedby="todo-validation-msg"
+                            maxlength="200"
+                        />
+                        <button
+                            id="add-task-btn"
+                            class="btn todo-add-btn"
+                            aria-label="Add new task"
+                        >
+                            + Add Task
+                        </button>
+                    </div>
+
+                    <!-- Validation Message -->
+                    <p
+                        id="todo-validation-msg"
+                        class="todo-validation hidden"
+                        role="alert"
+                        aria-live="polite"
+                    ></p>
+
+                    <!-- Filter Buttons -->
+                    <div
+                        class="todo-filters"
+                        role="group"
+                        aria-label="Filter tasks by status"
+                    >
+                        <button
+                            class="todo-filter-btn active"
+                            data-filter="all"
+                            aria-pressed="true"
+                        >
+                            All Tasks
+                        </button>
+                        <button
+                            class="todo-filter-btn"
+                            data-filter="active"
+                            aria-pressed="false"
+                        >
+                            Active
+                        </button>
+                        <button
+                            class="todo-filter-btn"
+                            data-filter="completed"
+                            aria-pressed="false"
+                        >
+                            Completed
+                        </button>
+                    </div>
+
+                    <!-- Task Stats -->
+                    <div class="todo-stats" aria-live="polite" aria-atomic="true">
+                        <span id="todo-count" aria-label="Task count"></span>
+                        <button
+                            id="clear-completed-btn"
+                            class="todo-clear-btn"
+                            aria-label="Clear all completed tasks"
+                        >
+                            Clear Completed
+                        </button>
+                    </div>
+
+                    <!-- Task List -->
+                    <ul
+                        id="todo-list"
+                        class="todo-list"
+                        aria-label="Task list"
+                        aria-live="polite"
+                    ></ul>
+
+                    <!-- Empty State -->
+                    <div
+                        id="todo-empty"
+                        class="todo-empty hidden"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        <p>🎉 No tasks here! Add one above to get started.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Back To Top Button -->
+        <button id="back-to-top" aria-label="Back to top of page"><b aria-hidden="true">↑</b></button>
+
+        <footer class="footer" role="contentinfo">
+            <nav aria-label="Footer navigation">
+                <ul class="footer-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html" aria-current="page">Todo</a></li>
+                </ul>
+            </nav>
+            <p>
+                Built with ❤️ for
+                <span class="company-name">ApexPlanet Software Pvt. Ltd.</span>
+                Internship – Task 5 Final Submission
+            </p>
+            <p class="tech-stack">HTML · CSS · JavaScript</p>
+        </footer>
+
+        <script src="js/storage.js"></script>
+        <script src="js/darkmode.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/todo.js"></script>
+    </body>
+</html>

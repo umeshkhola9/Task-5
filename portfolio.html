@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Primary SEO -->
+        <title>Portfolio</title>
+        <meta name="description" content="Browse Sochit Web Studio's portfolio of responsive websites, e-commerce stores, dashboards and landing pages built with HTML, CSS & JavaScript." />
+        <meta name="keywords" content="Sochit Web Studio portfolio, web design portfolio, website examples, web development projects" />
+        <meta name="author" content="Sochit Web Studio" />
+        <link rel="canonical" href="./portfolio.html" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Portfolio | Sochit Web Studio" />
+        <meta property="og:description" content="Browse Sochit Web Studio's portfolio of responsive websites, e-commerce stores, dashboards and landing pages built with HTML, CSS & JavaScript." />
+        <meta property="og:image" content="images/og-image.jpg" />
+        <meta property="og:url" content="./portfolio.html" />
+        <meta property="og:site_name" content="Sochit Web Studio" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Portfolio | Sochit Web Studio" />
+        <meta name="twitter:description" content="Browse Sochit Web Studio's portfolio of responsive websites, e-commerce stores, dashboards and landing pages built with HTML, CSS & JavaScript." />
+        <meta name="twitter:image" content="images/og-image.jpg" />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/portfolio.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <script>
+            document.documentElement.setAttribute(
+                "data-theme",
+                localStorage.getItem("theme") || "light"
+            );
+        </script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header role="banner">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="logo-title">
+                    <a href="index.html" aria-label="Sochit Web Studio - Go to homepage">
+                        <picture>
+                            <source srcset="images/logo.webp" type="image/webp" />
+                            <img
+                                src="images/logo.png"
+                                alt="Sochit Web Studio logo"
+                                class="logo"
+                                width="45"
+                                height="45"
+                                fetchpriority="high"
+                            />
+                        </picture>
+                    </a>
+                    <h2 class="title">Sochit Web Studio</h2>
+                </div>
+                <div class="navbar-controls">
+                    <button
+                        id="theme-toggle"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        🌙 Dark Mode
+                    </button>
+                    <button
+                        id="hamburger"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-links"
+                    >
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <ul class="nav-links" id="nav-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active" aria-current="page">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="hero" aria-labelledby="portfolio-hero-heading">
+                <h1 id="portfolio-hero-heading">Our Portfolio</h1>
+                <p>A selection of websites and web apps we've designed and built for our clients.</p>
+            </section>
+
+            <!-- Portfolio Project Grid -->
+            <section class="portfolio-section" aria-labelledby="portfolio-grid-heading">
+                <h2 id="portfolio-grid-heading" class="sr-only">Featured Projects</h2>
+                <div class="portfolio-grid" role="list">
+                    <article class="portfolio-card" role="listitem">
+                        <picture>
+                            <source srcset="images/gallery1.webp" type="image/webp" />
+                            <img
+                                src="images/gallery1.jpeg"
+                                alt="Homepage design for a small business website featuring a responsive navigation bar and hero banner"
+                                width="800"
+                                height="534"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <div class="portfolio-card-body">
+                            <h3>Business Website Redesign</h3>
+                            <p>A clean, fast-loading homepage with a responsive nav bar and strong hero section.</p>
+                            <ul class="portfolio-tags" aria-label="Project tags">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Responsive</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" role="listitem">
+                        <picture>
+                            <source srcset="images/gallery2.webp" type="image/webp" />
+                            <img
+                                src="images/gallery2.jpeg"
+                                alt="Product page layout for an online store with product grid, filters and add-to-cart buttons"
+                                width="800"
+                                height="534"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <div class="portfolio-card-body">
+                            <h3>E-Commerce Store</h3>
+                            <p>Product grid with filtering and add-to-cart flow, optimised for conversions.</p>
+                            <ul class="portfolio-tags" aria-label="Project tags">
+                                <li>JavaScript</li>
+                                <li>UI/UX</li>
+                                <li>E-Commerce</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" role="listitem">
+                        <picture>
+                            <source srcset="images/gallery3.webp" type="image/webp" />
+                            <img
+                                src="images/gallery3.jpg"
+                                alt="Dashboard screen for a web application showing analytics graphs, KPI cards and sidebar navigation"
+                                width="800"
+                                height="533"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <div class="portfolio-card-body">
+                            <h3>Web App Dashboard</h3>
+                            <p>An analytics dashboard with KPI cards, charts and a sidebar navigation system.</p>
+                            <ul class="portfolio-tags" aria-label="Project tags">
+                                <li>Dashboard</li>
+                                <li>Data Viz</li>
+                                <li>Web App</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" role="listitem">
+                        <picture>
+                            <source srcset="images/gallery4.webp" type="image/webp" />
+                            <img
+                                src="images/gallery4.jpeg"
+                                alt="Landing page design for a marketing campaign with headline, social proof section and prominent call-to-action"
+                                width="800"
+                                height="533"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <div class="portfolio-card-body">
+                            <h3>Marketing Landing Page</h3>
+                            <p>A high-converting landing page with social proof and a clear call-to-action.</p>
+                            <ul class="portfolio-tags" aria-label="Project tags">
+                                <li>Landing Page</li>
+                                <li>Marketing</li>
+                                <li>CRO</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="page-content" aria-labelledby="portfolio-cta-heading">
+                <h2 id="portfolio-cta-heading">Like what you see?</h2>
+                <p>
+                    We'd love to build something similar for you. Get in touch and
+                    tell us about your project.
+                </p>
+                <a href="contact.html" class="btn">Get in Touch</a>
+            </section>
+        </main>
+
+        <!-- Back To Top Button -->
+        <button id="back-to-top" aria-label="Back to top of page"><b aria-hidden="true">↑</b></button>
+
+        <footer class="footer" role="contentinfo">
+            <nav aria-label="Footer navigation">
+                <ul class="footer-links" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                </ul>
+            </nav>
+            <p>
+                Built with ❤️ for
+                <span class="company-name">ApexPlanet Software Pvt. Ltd.</span>
+                Internship – Task 5 Final Submission
+            </p>
+            <p class="tech-stack">HTML · CSS · JavaScript</p>
+        </footer>
+
+        <script src="js/storage.js"></script>
+        <script src="js/darkmode.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

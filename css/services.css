@@ -1,0 +1,33 @@
+/* =============================================================
+   SERVICES.CSS — Sochit Web Studio
+   Styles specific to the Services page.
+   The service card grid reuses .cards / .card from home.css.
+   Table styles live in base.css.
+   This file holds the pricing table section wrapper.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   PRICING TABLE SECTION WRAPPER
+   Wraps the <table> on the Services page.
+   --------------------------------------------------------------- */
+.table-content {
+    width: 100%;
+    max-width: none;
+    padding: 40px 0;
+    overflow-x: auto;
+}
+
+.table-content h2 {
+    margin-bottom: 10px;
+    padding: 0 40px;
+}
+
+/* Pricing table only: fixed layout so the table reliably spans
+   the full width of the wrapper with even column widths. Scoped
+   here (not in base.css) so the Contact page table, which relies
+   on auto layout, is unaffected. */
+.table-content table {
+    width: 100%;
+    min-width: 500px;
+    table-layout: fixed;
+}

@@ -1,0 +1,138 @@
+/* =============================================================
+   NAVBAR.CSS — Sochit Web Studio
+   Header, primary navigation, hamburger button, theme toggle.
+   BEM blocks: .navbar, .navbar__logo-area, .navbar__controls,
+               .navbar__links, .hamburger, .theme-toggle
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   NAVBAR BLOCK
+   --------------------------------------------------------------- */
+.navbar {
+    background: var(--navbar-bg);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 50px;
+    transition: background 0.3s ease;
+}
+
+/* ---------------------------------------------------------------
+   LOGO AREA  (logo + studio name)
+   --------------------------------------------------------------- */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ensure logo link has no underline */
+.logo-title a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+/* ---------------------------------------------------------------
+   NAV LINKS LIST
+   --------------------------------------------------------------- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 90px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Active / current page link */
+.nav-links a.active {
+    color: #0077ff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #0077ff;
+}
+
+/* ---------------------------------------------------------------
+   NAVBAR CONTROLS  (theme toggle + hamburger wrapper)
+   --------------------------------------------------------------- */
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ---------------------------------------------------------------
+   THEME TOGGLE BUTTON
+   --------------------------------------------------------------- */
+#theme-toggle {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+#theme-toggle:hover {
+    background: #fff;
+    color: #222;
+}
+
+/* ---------------------------------------------------------------
+   HAMBURGER BUTTON  (mobile only — shown via responsive.css)
+   --------------------------------------------------------------- */
+#hamburger {
+    display: none; /* revealed at ≤768px in responsive.css */
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 1100;
+}
+
+/* Three bars that animate into an X when menu is open */
+#hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}

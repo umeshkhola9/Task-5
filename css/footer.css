@@ -1,0 +1,59 @@
+/* =============================================================
+   FOOTER.CSS — Sochit Web Studio
+   Site-wide footer block: links, branding, tech stack line.
+   BEM block: .footer, .footer__links, .footer__company-name,
+              .footer__tech-stack
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   FOOTER BLOCK
+   --------------------------------------------------------------- */
+.footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: auto;
+    transition: background 0.3s ease;
+}
+
+/* ---------------------------------------------------------------
+   FOOTER NAV LINKS
+   --------------------------------------------------------------- */
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--footer-text);
+}
+
+/* Active / current page link in footer */
+.footer-links a.active,
+.footer-links a[aria-current="page"] {
+    color: #0077ff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.footer-links a:hover {
+    color: #0077ff;
+}
+
+/* ---------------------------------------------------------------
+   FOOTER BRANDING ELEMENTS
+   --------------------------------------------------------------- */
+.company-name {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.tech-stack {
+    margin-top: 10px;
+    color: #94a3b8;
+    font-size: 14px;
+}

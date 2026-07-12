@@ -1,0 +1,250 @@
+/* =============================================================
+   TODO.CSS — Sochit Web Studio
+   All styles for the Todo List App page.
+   BEM: .todo-section, .todo-container,
+        .todo-input-box, .todo-item,
+        .todo-item__actions, .todo-filter-btn
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   SECTION & CONTAINER
+   --------------------------------------------------------------- */
+.todo-section {
+    padding: 50px 20px;
+    background: var(--bg);
+    transition: background 0.3s ease;
+}
+
+.todo-container {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------------------
+   ADD TASK INPUT ROW
+   --------------------------------------------------------------- */
+.todo-input-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 16px;
+    background: var(--input-bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s ease, background 0.3s ease;
+}
+
+.todo-input:focus {
+    border-color: #0077ff;
+}
+
+.todo-add-btn {
+    white-space: nowrap;
+    font-size: 15px;
+    padding: 12px 22px;
+}
+
+/* ---------------------------------------------------------------
+   VALIDATION MESSAGE
+   --------------------------------------------------------------- */
+.todo-validation {
+    color: #b91c1c;
+    font-size: 14px;
+    margin-bottom: 12px;
+    min-height: 20px;
+}
+
+[data-theme="dark"] .todo-validation {
+    color: #fca5a5;
+}
+
+/* ---------------------------------------------------------------
+   FILTER BUTTONS
+   --------------------------------------------------------------- */
+.todo-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.todo-filter-btn {
+    padding: 8px 18px;
+    border: 2px solid var(--input-border);
+    border-radius: 50px;
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.todo-filter-btn.active,
+.todo-filter-btn:hover {
+    background: #0077ff;
+    border-color: #0077ff;
+    color: white;
+}
+
+/* ---------------------------------------------------------------
+   TASK STATS ROW
+   --------------------------------------------------------------- */
+.todo-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: var(--text);
+    opacity: 0.75;
+}
+
+.todo-clear-btn {
+    background: none;
+    border: none;
+    color: #e53e3e;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: none; /* shown by JS when completed tasks exist */
+    transition: background 0.2s;
+}
+
+.todo-clear-btn:hover {
+    background: #fff0f0;
+}
+
+[data-theme="dark"] .todo-clear-btn:hover {
+    background: #3b1c1c;
+}
+
+/* ---------------------------------------------------------------
+   TASK LIST & INDIVIDUAL ITEMS
+   --------------------------------------------------------------- */
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: background 0.3s ease, transform 0.15s ease;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Strike-through text when task is completed */
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* Checkbox toggle button */
+.todo-check-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding: 0;
+    transition: transform 0.15s;
+}
+
+.todo-check-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Task text */
+.todo-text {
+    flex: 1;
+    font-size: 15px;
+    color: var(--text);
+    word-break: break-word;
+}
+
+/* Inline edit input — replaces .todo-text during edit mode */
+.todo-edit-input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 2px solid #0077ff;
+    border-radius: 6px;
+    font-size: 15px;
+    background: var(--input-bg);
+    color: var(--text);
+    outline: none;
+}
+
+/* Action buttons (edit + delete) */
+.todo-item-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.todo-edit-btn,
+.todo-delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+
+.todo-edit-btn:hover {
+    background: #e0edff;
+}
+
+.todo-delete-btn:hover {
+    background: #fff0f0;
+}
+
+[data-theme="dark"] .todo-edit-btn:hover {
+    background: #1a3a5c;
+}
+
+[data-theme="dark"] .todo-delete-btn:hover {
+    background: #3b1c1c;
+}
+
+/* ---------------------------------------------------------------
+   EMPTY STATE MESSAGE
+   --------------------------------------------------------------- */
+.todo-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text);
+    opacity: 0.5;
+    font-size: 16px;
+}

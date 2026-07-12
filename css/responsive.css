@@ -1,0 +1,158 @@
+/* =============================================================
+   RESPONSIVE.CSS — Sochit Web Studio
+   All media queries in one file, ordered from widest breakpoint
+   down to smallest. Each rule references the component it
+   overrides so it's easy to trace back to the source file.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   BREAKPOINT: ≤768px  (tablets and most phones)
+   Overrides: navbar.css, footer.css, home.css (hero, info-box,
+              slider, counters, back-to-top, modal)
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* --- Navbar --- */
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .navbar-controls {
+        margin-left: auto;
+    }
+
+    /* Hamburger becomes visible; nav links collapse */
+    #hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid #444;
+        margin-top: 10px;
+    }
+
+    /* JS adds .nav-open to reveal the menu */
+    .nav-links.nav-open {
+        display: flex;
+    }
+
+    /* --- Footer --- */
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-links li:last-child {
+        grid-column: 1 / -1;
+    }
+
+    /* --- Hero --- */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    /* --- Info Box --- */
+    .info-box {
+        margin: 0 20px 30px;
+    }
+
+    /* --- Slider --- */
+    .slide img {
+        height: 220px;
+    }
+
+    .slider-section {
+        padding: 20px 20px 0;
+    }
+
+    /* --- Counters --- */
+    .counters-section {
+        padding: 40px 20px;
+    }
+
+    /* --- Back To Top --- */
+    #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    /* --- Modal --- */
+    .modal-box {
+        padding: 28px 20px;
+    }
+
+    /* --- Weather Dashboard --- */
+    .weather-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------------------------------------------------------------
+   BREAKPOINT: ≤640px  (small phones)
+   Overrides: weather.css, todo.css
+   --------------------------------------------------------------- */
+@media (max-width: 640px) {
+
+    /* --- Weather App --- */
+    .weather-search-box {
+        flex-direction: column;
+    }
+
+    .weather-search-btn {
+        width: 100%;
+    }
+
+    .weather-dashboard {
+        padding: 28px 18px 24px;
+        border-radius: 22px;
+    }
+
+    .weather-dashboard-city {
+        font-size: 21px;
+    }
+
+    .weather-dashboard-main {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .weather-dashboard-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .weather-dashboard-temp {
+        font-size: 56px;
+    }
+
+    .weather-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* --- Todo App --- */
+    .todo-input-box {
+        flex-direction: column;
+    }
+
+    .todo-add-btn {
+        width: 100%;
+    }
+
+    .todo-filters {
+        justify-content: center;
+    }
+}

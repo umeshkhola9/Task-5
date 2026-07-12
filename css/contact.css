@@ -1,0 +1,151 @@
+/* =============================================================
+   CONTACT.CSS — Sochit Web Studio
+   Styles for the Contact page:
+   Contact form, form validation states, character counter,
+   and the location map aside.
+   BEM: .contact-form (block), .field-error / .field-hint
+        .location-box (block)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   CONTACT FORM
+   --------------------------------------------------------------- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--input-border);
+    border-radius: 5px;
+    background: var(--input-bg);
+    color: var(--text);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form button {
+    background: #0077ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #222;
+}
+
+/* ---------------------------------------------------------------
+   FORM VALIDATION STATES
+   .input-error — applied by JS when a field fails validation
+   .input-valid — applied by JS when a field passes validation
+   --------------------------------------------------------------- */
+.field-error {
+    color: #e53e3e;
+    font-size: 13px;
+    margin-top: -8px;
+    display: block;
+}
+
+/* Empty error spans collapse so they take no space */
+.field-error:empty {
+    display: none;
+}
+
+/* Inline hint text below a field */
+.field-hint {
+    display: block;
+    font-size: 0.82rem;
+    color: #666;
+    margin-top: -6px;
+    margin-bottom: 4px;
+}
+
+/* "(optional)" label modifier */
+.optional-label {
+    font-size: 0.82rem;
+    color: #888;
+    font-weight: normal;
+}
+
+/* Required asterisk */
+.contact-form label span[aria-label="required"],
+.modal-form label span[aria-label="required"] {
+    color: #c0392b;
+    margin-left: 2px;
+}
+
+/* Error border */
+.contact-form input.input-error,
+.contact-form textarea.input-error {
+    border-color: #e53e3e !important;
+    background: #fff5f5;
+}
+
+/* Valid border */
+.contact-form input.input-valid,
+.contact-form textarea.input-valid {
+    border-color: #38a169 !important;
+    background: #f0fff4;
+}
+
+/* Dark mode overrides for validation colours */
+[data-theme="dark"] .contact-form input.input-error,
+[data-theme="dark"] .contact-form textarea.input-error {
+    background: #3d1515;
+}
+
+[data-theme="dark"] .contact-form input.input-valid,
+[data-theme="dark"] .contact-form textarea.input-valid {
+    background: #1a3a2a;
+}
+
+/* ---------------------------------------------------------------
+   CHARACTER COUNTER (message textarea)
+   --------------------------------------------------------------- */
+#char-counter {
+    text-align: right;
+    font-size: 13px;
+    color: #666;
+    margin-top: -10px;
+}
+
+/* Warning state — JS adds this class when nearing the limit */
+#char-counter.counter-warning {
+    color: #e53e3e;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------------------
+   LOCATION BOX (Google Map aside on Contact page)
+   --------------------------------------------------------------- */
+.location-box {
+    background: var(--aside-bg);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.location-box iframe {
+    width: 100%;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+}
